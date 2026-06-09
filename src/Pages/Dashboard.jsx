@@ -55,7 +55,7 @@ function Dashboard({ setActivePage }) {
     <section className="page">
       <div className="dashboard-hero">
         <div className="hero-left">
-          <span className="hero-pill">AI-Powered ERP Suite</span>
+          <span className="hero-pill">Cloud ERP Suite</span>
 
           <h2>Operate your entire business from one intelligent dashboard.</h2>
 

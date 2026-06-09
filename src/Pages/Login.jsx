@@ -25,7 +25,7 @@ function Login({ setIsLoggedIn }) {
           </div>
           <div>
             <h2>Amdox Cloud ERP</h2>
-            <p>AI-powered business operations suite</p>
+         <p>Business operations management suite</p>
           </div>
         </div>
 
@@ -38,8 +38,8 @@ function Login({ setIsLoggedIn }) {
           <h1>Run finance, HR, supply chain, and projects from one command center.</h1>
 
           <p>
-            A modern ERP workspace built for real-time insights, automated
-            reporting, and faster operational decision-making.
+           A modern ERP workspace built for real-time insights, organized
+reporting, and faster operational decision-making.
           </p>
 
           <div className="feature-list">
@@ -53,7 +53,7 @@ function Login({ setIsLoggedIn }) {
             </div>
             <div>
               <BadgeCheck size={18} />
-              <span>AI-ready reports and analytics</span>
+             <span>Reports and analytics dashboard</span>
             </div>
           </div>
         </div>
