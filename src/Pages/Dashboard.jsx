@@ -1,92 +1,227 @@
+import { useRef } from "react";
+import {
+  Users,
+  IndianRupee,
+  Package,
+  Clock3,
+  ArrowUpRight,
+  MoreHorizontal,
+  CheckCircle2,
+  AlertCircle,
+  Activity,
+} from "lucide-react";
 import StatCard from "../components/StatCard";
-import heroImage from "../assets/hero.png";
 
-function Dashboard() {
+function Dashboard({ setActivePage }) {
+  const modulesRef = useRef(null);
+
+  const goToReports = () => {
+    setActivePage("Reports");
+  };
+
+  const scrollToModules = () => {
+    modulesRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
   const modules = [
-    "Finance",
-    "HR & Payroll",
-    "Inventory",
-    "AI Reports",
+    { title: "Finance", value: "₹5.4L", label: "Monthly revenue", tone: "purple" },
+    { title: "HR", value: "120", label: "Active employees", tone: "cyan" },
+    { title: "Inventory", value: "450", label: "Items in stock", tone: "green" },
+    { title: "Reports", value: "28", label: "Generated reports", tone: "orange" },
+  ];
+
+  const activities = [
+    {
+      title: "Payroll report generated",
+      desc: "Finance team created monthly payroll summary.",
+      type: "success",
+    },
+    {
+      title: "Low stock alert",
+      desc: "Inventory module detected 32 low-stock items.",
+      type: "warning",
+    },
+    {
+      title: "New employee added",
+      desc: "HR added a new frontend intern profile.",
+      type: "success",
+    },
   ];
 
   return (
     <section className="page">
-      <div className="hero-section">
-        <div className="hero-content">
-          <span className="eyebrow">AI-Powered Cloud ERP</span>
-          <h2>Smart ERP dashboard for business operations.</h2>
+      <div className="dashboard-hero">
+        <div className="hero-left">
+          <span className="hero-pill">AI-Powered ERP Suite</span>
+
+          <h2>Operate your entire business from one intelligent dashboard.</h2>
+
           <p>
-            Track employees, revenue, inventory, approvals, and reports from one
-            clean cloud-based system.
+            Monitor revenue, teams, attendance, inventory, approvals, and
+            reports through a clean cloud ERP experience.
           </p>
 
           <div className="hero-actions">
-            <button className="primary-btn">View Reports</button>
-            <button className="secondary-btn">Explore Modules</button>
+            <button type="button" className="primary-btn" onClick={goToReports}>
+              View Analytics <ArrowUpRight size={16} />
+            </button>
+
+            <button type="button" className="secondary-btn" onClick={scrollToModules}>
+              Explore Modules
+            </button>
           </div>
         </div>
 
-        <img className="hero-bg-image" src={heroImage} alt="ERP visual" />
+        <div className="hero-glass-card">
+          <div className="glass-header">
+            <p>System Health</p>
+            <MoreHorizontal size={18} />
+          </div>
+
+          <div className="health-score">
+            <h3>94%</h3>
+            <span>Stable</span>
+          </div>
+
+          <div className="mini-bars">
+            <div style={{ height: "42%" }}></div>
+            <div style={{ height: "70%" }}></div>
+            <div style={{ height: "55%" }}></div>
+            <div style={{ height: "88%" }}></div>
+            <div style={{ height: "64%" }}></div>
+            <div style={{ height: "92%" }}></div>
+          </div>
+        </div>
       </div>
 
       <div className="stats-grid">
-        <StatCard title="Employees" value="120" change="+8 new hires" />
-        <StatCard title="Revenue" value="₹5.4L" change="+14% growth" />
-        <StatCard title="Inventory" value="450" change="32 low stock" />
-        <StatCard title="Approvals" value="18" change="Needs action" />
+        <StatCard
+          title="Employees"
+          value="120"
+          change="+8 this month"
+          icon={Users}
+          tone="purple"
+        />
+        <StatCard
+          title="Revenue"
+          value="₹5.4L"
+          change="+14% growth"
+          icon={IndianRupee}
+          tone="cyan"
+        />
+        <StatCard
+          title="Inventory"
+          value="450"
+          change="32 low stock"
+          icon={Package}
+          tone="green"
+        />
+        <StatCard
+          title="Approvals"
+          value="18"
+          change="Needs action"
+          icon={Clock3}
+          tone="orange"
+        />
       </div>
 
-      <div className="content-grid">
-        <div className="panel">
+      <div className="main-dashboard-grid">
+        <div className="panel revenue-panel">
           <div className="panel-header">
-            <h3>ERP Modules</h3>
+            <div>
+              <h3>Revenue Overview</h3>
+              <p>Monthly performance snapshot</p>
+            </div>
+            <span>2026</span>
+          </div>
+
+          <div className="chart-placeholder">
+            <div className="chart-line"></div>
+            <div className="chart-bars">
+              <span style={{ height: "45%" }}></span>
+              <span style={{ height: "60%" }}></span>
+              <span style={{ height: "38%" }}></span>
+              <span style={{ height: "75%" }}></span>
+              <span style={{ height: "68%" }}></span>
+              <span style={{ height: "88%" }}></span>
+              <span style={{ height: "72%" }}></span>
+            </div>
+          </div>
+        </div>
+
+        <div className="panel modules-panel" ref={modulesRef}>
+          <div className="panel-header">
+            <div>
+              <h3>Core Modules</h3>
+              <p>Active ERP areas</p>
+            </div>
             <span>4 active</span>
           </div>
 
-          <div className="mini-modules">
+          <div className="module-list">
             {modules.map((module) => (
-              <div className="mini-module" key={module}>
-                <div>{module.charAt(0)}</div>
-                <p>{module}</p>
+              <div className="module-row" key={module.title}>
+                <div className={`module-dot ${module.tone}`}></div>
+                <div>
+                  <h4>{module.title}</h4>
+                  <p>{module.label}</p>
+                </div>
+                <strong>{module.value}</strong>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="panel">
+        <div className="panel activity-panel">
           <div className="panel-header">
-            <h3>Recent Activity</h3>
+            <div>
+              <h3>Recent Activity</h3>
+              <p>Latest system updates</p>
+            </div>
             <span>Today</span>
           </div>
 
-          <div className="activity-list compact">
-            <div>
-              <strong>Employee record updated</strong>
-              <p>HR team updated payroll details.</p>
-            </div>
-            <div>
-              <strong>Inventory alert generated</strong>
-              <p>Low stock detected for 12 products.</p>
-            </div>
-            <div>
-              <strong>Finance report created</strong>
-              <p>Monthly report generated successfully.</p>
-            </div>
+          <div className="activity-list">
+            {activities.map((activity) => (
+              <div className="activity-item" key={activity.title}>
+                {activity.type === "success" ? (
+                  <CheckCircle2 className="success-icon" size={18} />
+                ) : (
+                  <AlertCircle className="warning-icon" size={18} />
+                )}
+                <div>
+                  <strong>{activity.title}</strong>
+                  <p>{activity.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="panel approval-panel">
+        <div className="panel progress-panel">
           <div className="panel-header">
-            <h3>Task Progress</h3>
-            <span>Weekly</span>
+            <div>
+              <h3>Task Progress</h3>
+              <p>Weekly completion</p>
+            </div>
+            <Activity size={18} />
           </div>
 
-          <div className="approval-box">
+          <div className="progress-value">
             <h2>72%</h2>
-            <p>Tasks completed this week</p>
-            <div className="progress-bar">
-              <div></div>
-            </div>
+            <p>Completed this week</p>
+          </div>
+
+          <div className="progress-bar">
+            <div></div>
+          </div>
+
+          <div className="progress-meta">
+            <span>Completed</span>
+            <strong>36/50 tasks</strong>
           </div>
         </div>
       </div>

@@ -1,9 +1,15 @@
-function StatCard({ title, value, change }) {
+function StatCard({ title, value, change, icon: Icon, tone }) {
   return (
     <div className="stat-card">
-      <p>{title}</p>
-      <h2>{value}</h2>
-      <span>{change}</span>
+      <div className={`stat-icon ${tone}`}>
+        <Icon size={20} />
+      </div>
+
+      <div>
+        <p>{title}</p>
+        <h2>{value}</h2>
+        <span>{change}</span>
+      </div>
     </div>
   );
 }
