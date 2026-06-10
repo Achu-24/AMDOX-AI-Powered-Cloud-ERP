@@ -1800,3 +1800,37 @@ input {
 .main-dashboard-grid {
   max-width: 100%;
 }
+/* WIDER SIDEBAR + CONTENT FIX */
+
+.sidebar {
+  width: 300px;
+  min-width: 300px;
+}
+
+.main-content {
+  width: calc(100% - 300px);
+  margin-left: 300px;
+  max-width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topbar {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 28px;
+}
+
+.dashboard-hero,
+.stats-grid,
+.main-dashboard-grid {
+  width: 100%;
+  max-width: 100%;
+}
