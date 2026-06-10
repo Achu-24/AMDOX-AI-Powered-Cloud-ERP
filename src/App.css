@@ -1775,3 +1775,28 @@ input {
   font-weight: 650;
   margin-top: 6px;
 }
+/* WEBSITE WIDTH FIX */
+
+.main-content {
+  width: calc(100% - 276px);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.topbar {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto 28px;
+}
+
+.dashboard-hero,
+.stats-grid,
+.main-dashboard-grid {
+  max-width: 100%;
+}
