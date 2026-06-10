@@ -4,14 +4,14 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Finance from "./pages/Finance";
-import HR from "./pages/HR";
-import SupplyChain from "./pages/SupplyChain";
-import ProjectManagement from "./pages/ProjectManagement";
-import Reports from "./pages/Reports";
-import Settings from "./pages/Settings";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import Finance from "./Pages/Finance";
+import HR from "./Pages/HR";
+import SupplyChain from "./Pages/SupplyChain";
+import ProjectManagement from "./Pages/ProjectManagement";
+import Reports from "./Pages/Reports";
+import Settings from "./Pages/Settings";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
