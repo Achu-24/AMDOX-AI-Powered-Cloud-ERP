@@ -24,3 +24,24 @@ export const registerUser = async (
 
   return { user, token };
 };
+
+export const loginUser = async (
+  email: string,
+  password: string
+) => {
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    throw new Error("Invalid credentials");
+  }
+
+  const isMatch = await user.matchPassword(password);
+
+  if (!isMatch) {
+    throw new Error("Invalid credentials");
+  }
+
+  const token = generateToken(user._id.toString());
+
+  return { user, token };
+};
