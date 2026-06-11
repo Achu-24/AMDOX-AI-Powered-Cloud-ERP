@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { registerUser, loginUser } from "../services/authService";
+import {
+  registerUser,
+  loginUser,
+  getProfile,
+} from "../services/authService";
 
 export const register = async (req: Request, res: Response) => {
   try {
@@ -40,6 +44,24 @@ export const login = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     console.error("LOGIN ERROR:", error);
+
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const profile = async (req: any, res: Response) => {
+  try {
+    const user = await getProfile(req.user._id);
+
+    res.status(200).json({
+      success: true,
+      data: user,
+    });
+  } catch (error: any) {
+    console.error("PROFILE ERROR:", error);
 
     res.status(400).json({
       success: false,

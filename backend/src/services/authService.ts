@@ -45,3 +45,13 @@ export const loginUser = async (
 
   return { user, token };
 };
+
+export const getProfile = async (userId: string) => {
+  const user = await User.findById(userId);
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  return user;
+};
