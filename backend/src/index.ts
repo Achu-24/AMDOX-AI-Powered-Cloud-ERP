@@ -10,7 +10,7 @@ import roleRoutes from "./routes/roleRoutes";
 import permissionRoutes from "./routes/permissionRoutes";
 import tenantRoutes from "./routes/tenantRoutes";
 import employeeRoutes from "./routes/employeeRoutes";
-
+import attendanceRoutes from "./routes/attendanceRoutes";
 
 dotenv.config();
 
@@ -27,6 +27,7 @@ app.use("/api/roles", roleRoutes);
 app.use("/api/permissions", permissionRoutes);
 app.use("/api/tenants", tenantRoutes);
 app.use("/api/employees", employeeRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 app.get("/", (req, res) => {
   res.send("Amdox ERP Backend Running");
