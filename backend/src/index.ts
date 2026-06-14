@@ -15,6 +15,8 @@ import leaveRoutes from "./routes/leaveRoutes";
 import payrollRoutes from "./routes/payrollRoutes";
 import payslipRoutes from "./routes/payslipRoutes";
 import dashboardRoutes from "./routes/dashboardRoutes";
+import widgetRoutes from "./routes/widgetRoutes";
+import reportRoutes from "./routes/reportRoutes";
 
 dotenv.config();
 
@@ -36,6 +38,9 @@ app.use("/api/leaves", leaveRoutes);
 app.use("/api/payrolls", payrollRoutes);
 app.use("/api/payslips", payslipRoutes);
 app.use("/api/dashboards", dashboardRoutes);
+app.use("/api/widgets", widgetRoutes);
+app.use("/api/reports", reportRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("Amdox ERP Backend Running");
