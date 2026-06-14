@@ -6,6 +6,8 @@ const connectDB = require("./config/database");
 
 import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
+import roleRoutes from "./routes/roleRoutes";
+import permissionRoutes from "./routes/permissionRoutes";
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/roles", roleRoutes);
+app.use("/api/permissions", permissionRoutes);
 
 app.get("/", (req, res) => {
   res.send("Amdox ERP Backend Running");
