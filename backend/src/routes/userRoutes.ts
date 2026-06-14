@@ -8,10 +8,16 @@ import {
 } from "../controllers/userController";
 
 import { protect } from "../middleware/auth.middleware";
+import { authorize } from "../middleware/rbac.middleware";
 
 const router = express.Router();
 
-router.get("/", protect, getUsers);
+router.get(
+  "/",
+  protect,
+  authorize("manage_users"),
+  getUsers
+);
 
 router.get("/:id", protect, getUser);
 
