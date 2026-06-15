@@ -31,6 +31,9 @@ import purchaseOrderRoutes from "./routes/purchaseOrderRoutes";
 import goodsReceiptRoutes from "./routes/goodsReceiptRoutes";
 import inventoryRoutes from "./routes/inventoryRoutes";
 import forecastRoutes from "./routes/forecastRoutes";
+import notificationRoutes from "./routes/notificationRoutes";
+import eventRoutes from "./routes/eventRoutes";
+import webhookRoutes from "./routes/webhookRoutes";
 
 
 
@@ -72,6 +75,9 @@ app.use("/api/purchaseOrders", purchaseOrderRoutes);
 app.use("/api/goodsReceipts", goodsReceiptRoutes);
 app.use("/api/inventories", inventoryRoutes);
 app.use("/api/forecasts", forecastRoutes);
+app.use("/api/notifications", notificationRoutes);
+app.use("/api/events", eventRoutes);
+app.use("/api/webhooks", webhookRoutes);
 
 
 
