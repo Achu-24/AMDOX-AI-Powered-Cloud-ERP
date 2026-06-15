@@ -17,6 +17,11 @@ import payslipRoutes from "./routes/payslipRoutes";
 import dashboardRoutes from "./routes/dashboardRoutes";
 import widgetRoutes from "./routes/widgetRoutes";
 import reportRoutes from "./routes/reportRoutes";
+import chartOfAccountsRoutes from "./routes/chartOfAccountsRoutes";
+import invoiceRoutes from "./routes/invoiceRoutes";
+import paymentRoutes from "./routes/paymentRoutes";
+import journalEntryRoutes from "./routes/journalEntryRoutes";
+import currencyRoutes from "./routes/currencyRoutes";
 
 dotenv.config();
 
@@ -40,6 +45,12 @@ app.use("/api/payslips", payslipRoutes);
 app.use("/api/dashboards", dashboardRoutes);
 app.use("/api/widgets", widgetRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/api/chartOfAccounts", chartOfAccountsRoutes);
+app.use("/api/invoices", invoiceRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/journalEntries", journalEntryRoutes);
+app.use("/api/currencies", currencyRoutes);
+
 
 
 app.get("/", (req, res) => {
