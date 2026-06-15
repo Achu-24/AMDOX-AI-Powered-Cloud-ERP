@@ -22,6 +22,14 @@ import invoiceRoutes from "./routes/invoiceRoutes";
 import paymentRoutes from "./routes/paymentRoutes";
 import journalEntryRoutes from "./routes/journalEntryRoutes";
 import currencyRoutes from "./routes/currencyRoutes";
+import projectRoutes from "./routes/projectRoutes";
+import taskRoutes from "./routes/taskRoutes";
+import resourceRoutes from "./routes/resourceRoutes";
+import budgetRoutes from "./routes/budgetRoutes";
+
+
+
+
 
 dotenv.config();
 
@@ -50,6 +58,12 @@ app.use("/api/invoices", invoiceRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/journalEntries", journalEntryRoutes);
 app.use("/api/currencies", currencyRoutes);
+app.use("/api/projects", projectRoutes);
+app.use("/api/tasks", taskRoutes);
+app.use("/api/resources", resourceRoutes);
+app.use("/api/budgets", budgetRoutes);
+
+
 
 
 
