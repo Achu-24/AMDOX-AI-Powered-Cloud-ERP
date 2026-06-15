@@ -26,6 +26,11 @@ import projectRoutes from "./routes/projectRoutes";
 import taskRoutes from "./routes/taskRoutes";
 import resourceRoutes from "./routes/resourceRoutes";
 import budgetRoutes from "./routes/budgetRoutes";
+import vendorRoutes from "./routes/vendorRoutes";
+import purchaseOrderRoutes from "./routes/purchaseOrderRoutes";
+import goodsReceiptRoutes from "./routes/goodsReceiptRoutes";
+import inventoryRoutes from "./routes/inventoryRoutes";
+import forecastRoutes from "./routes/forecastRoutes";
 
 
 
@@ -62,6 +67,11 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/resources", resourceRoutes);
 app.use("/api/budgets", budgetRoutes);
+app.use("/api/vendors", vendorRoutes);
+app.use("/api/purchaseOrders", purchaseOrderRoutes);
+app.use("/api/goodsReceipts", goodsReceiptRoutes);
+app.use("/api/inventories", inventoryRoutes);
+app.use("/api/forecasts", forecastRoutes);
 
 
 
