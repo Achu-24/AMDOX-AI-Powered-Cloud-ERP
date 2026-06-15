@@ -1,0 +1,25 @@
+import express from "express";
+
+import {
+  create,
+  getPayments,
+  getPayment,
+  update,
+  remove,
+} from "../controllers/paymentController";
+
+import { protect } from "../middleware/auth.middleware";
+
+const router = express.Router();
+
+router.post("/", protect, create);
+
+router.get("/", protect, getPayments);
+
+router.get("/:id", protect, getPayment);
+
+router.put("/:id", protect, update);
+
+router.delete("/:id", protect, remove);
+
+export default router;
