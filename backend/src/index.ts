@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger";
 
 const connectDB = require("./config/database");
 
@@ -34,9 +36,6 @@ import forecastRoutes from "./routes/forecastRoutes";
 import notificationRoutes from "./routes/notificationRoutes";
 import eventRoutes from "./routes/eventRoutes";
 import webhookRoutes from "./routes/webhookRoutes";
-
-
-
 
 
 dotenv.config();
@@ -78,6 +77,12 @@ app.use("/api/forecasts", forecastRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/webhooks", webhookRoutes);
+
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec)
+);
 
 
 
