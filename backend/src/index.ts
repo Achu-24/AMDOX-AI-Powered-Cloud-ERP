@@ -36,6 +36,7 @@ import forecastRoutes from "./routes/forecastRoutes";
 import notificationRoutes from "./routes/notificationRoutes";
 import eventRoutes from "./routes/eventRoutes";
 import webhookRoutes from "./routes/webhookRoutes";
+import auditLogRoutes from "./routes/auditLogRoutes";
 
 
 dotenv.config();
@@ -77,6 +78,7 @@ app.use("/api/forecasts", forecastRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/webhooks", webhookRoutes);
+app.use("/api/auditLogs", auditLogRoutes);
 
 app.use(
   "/api-docs",
