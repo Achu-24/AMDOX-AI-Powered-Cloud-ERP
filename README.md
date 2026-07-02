@@ -31,16 +31,9 @@
 
 # 📖 About the Project
 
-AMDOX Cloud ERP is a modern Enterprise Resource Planning (ERP) web application developed during the **Amdox Technologies Internship Program**.
+Amdox AI-Powered Cloud ERP is a modern, full-stack Enterprise Resource Planning (ERP) platform designed to simplify academic and administrative operations for educational institutions. It centralizes student management, attendance tracking, project management, and reporting into a secure, cloud-based application with an intuitive user interface.
 
-The project demonstrates the frontend implementation of an ERP system that provides different business management modules through a clean, responsive, and user-friendly interface.
-
-The application follows a component-based architecture using React and showcases multiple ERP modules including Dashboard, Finance, Human Resources, Supply Chain, Attendance, Projects, Project Management, and Reports.
-
-The project focuses on creating a professional enterprise dashboard while maintaining responsive design, modular development, and clean user experience.
-
-> **Note:** This project was developed for educational and internship purposes and is intended as a frontend demonstration of an ERP system.
-
+The platform is built using a scalable architecture with React, TypeScript, Node.js, Express.js, PostgreSQL, and Prisma ORM, ensuring high performance, maintainability, and seamless integration between the frontend and backend.
 ---
 
 # 🎯 Project Objectives
@@ -73,30 +66,39 @@ The project focuses on creating a professional enterprise dashboard while mainta
 
 ---
 
-# 🛠️ Technology Stack
 
-## Frontend
 
-- React.js
-- JavaScript (ES6)
-- JSX
-- HTML5
-- CSS3
+# 🛠️ Tech Stack
+Frontend
+React.js
+TypeScript
+Vite
+Tailwind CSS
+React Router DOM
+Axios
 
-## Development Tools
+Backend
+Node.js
+Express.js
+TypeScript
+Prisma ORM
+JWT (JSON Web Tokens) for Authentication
+bcrypt for Password Hashing
+Database
+PostgreSQL
 
-- Vite
-- ESLint
-- Lucide React
+Development Tools
+Git & GitHub
+VS Code
+Postman (API Testing)
+Nodemon
+ESLint
+Prettier
 
-## Version Control
-
-- Git
-- GitHub
-
-## Deployment
-
-- Vercel
+Deployment
+Frontend: Vercel
+Backend: Render
+Database: PostgreSQL (Neon/Supabase or your PostgreSQL provider)
 
 ---
 
