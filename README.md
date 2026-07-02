@@ -230,7 +230,7 @@ Contributions are welcome.
 
 ## 📄 License
 
-This project is shared for educational and portfolio purposes.
+This project is shared for internship at Amdox Technologies
 
 
 ## ⭐ Acknowledgement
