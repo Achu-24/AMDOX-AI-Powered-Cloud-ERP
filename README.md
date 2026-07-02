@@ -283,6 +283,7 @@ This internship project helped in understanding:
 
 ---
 🚀 Future Enhancements
+
 🤖 Integrate advanced AI-powered analytics for student performance prediction and attendance insights.
 📊 Develop a comprehensive reporting dashboard with interactive charts and PDF/Excel export functionality.
 🔐 Implement Role-Based Access Control (RBAC) with granular permissions for different user roles.
