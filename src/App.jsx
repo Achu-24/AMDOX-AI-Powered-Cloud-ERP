@@ -11,6 +11,7 @@ import HR from "./Pages/HR";
 import SupplyChain from "./Pages/SupplyChain";
 import ProjectManagement from "./Pages/ProjectManagement";
 import Reports from "./Pages/Reports";
+import Analytics from "./Pages/Analytics";
 import Settings from "./Pages/Settings";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     if (activePage === "Supply Chain") return <SupplyChain />;
     if (activePage === "Project Management") return <ProjectManagement />;
     if (activePage === "Reports") return <Reports />;
+    if (activePage === "Analytics") return <Analytics />;
     if (activePage === "Settings") return <Settings />;
 
     return <Dashboard setActivePage={setActivePage} />;

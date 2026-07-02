@@ -15,10 +15,9 @@ import StatCard from "../components/StatCard";
 function Dashboard({ setActivePage }) {
   const modulesRef = useRef(null);
 
-  const goToReports = () => {
-    setActivePage("Reports");
+  const goToAnalytics = () => {
+    setActivePage("Analytics");
   };
-
   const scrollToModules = () => {
     modulesRef.current?.scrollIntoView({
       behavior: "smooth",
@@ -65,8 +64,8 @@ function Dashboard({ setActivePage }) {
           </p>
 
           <div className="hero-actions">
-            <button type="button" className="primary-btn" onClick={goToReports}>
-              View Analytics <ArrowUpRight size={16} />
+            <button type="button" className="primary-btn" onClick={goToAnalytics}>
+                 View Analytics <ArrowUpRight size={16} />
             </button>
 
             <button type="button" className="secondary-btn" onClick={scrollToModules}>

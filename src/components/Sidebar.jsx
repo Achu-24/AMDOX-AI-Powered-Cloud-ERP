@@ -7,6 +7,7 @@ import {
   FileText,
   Settings,
   Sparkles,
+  BarChart3,
 } from "lucide-react";
 
 const menuItems = [
@@ -16,6 +17,7 @@ const menuItems = [
   { name: "Supply Chain", icon: Truck },
   { name: "Project Management", icon: FolderKanban },
   { name: "Reports", icon: FileText },
+  { name: "Analytics", icon: BarChart3 },
   { name: "Settings", icon: Settings },
 ];
 
